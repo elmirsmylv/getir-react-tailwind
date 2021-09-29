@@ -26,12 +26,12 @@ const Card = () => {
   ];
 
   return (
-    <div className="flex gap-x-3 mt-7 items-center justify-center">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 px-4 md:px-0 gap-4">
       {cards.length &&
         cards.map((card) => (
           <div
             key={card.id}
-            className="flex flex-col items-center justify-center p-16 bg-white rounded text-center  shadow-sm"
+            className="flex flex-col items-center  p-14 bg-white rounded-lg text-center shadow-sm"
           >
             <img src={card.image} className="mb-6" />
             <h3 className="font-semibold text-lg text-primary-brand-color mb-2">

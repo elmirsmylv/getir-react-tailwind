@@ -4,8 +4,8 @@ import { RiUser3Fill, RiUserAddFill } from "react-icons/ri";
 
 const Header = () => {
   return (
-    <div className="bg-brand-color h-11">
-      <div className="container mx-auto h-11 flex items-center justify-between">
+    <div className="bg-brand-color">
+      <div className="container mx-auto h-16 md:h-11 flex items-center justify-center md:justify-between">
         <a>
           <img
             data-testid="main-image"
@@ -16,7 +16,7 @@ const Header = () => {
           />
         </a>
 
-        <nav className="flex gap-x-8 text-sm font-semibold">
+        <nav className="hidden md:flex gap-x-8 text-sm font-semibold">
           <a
             href="#"
             className="flex gap-x-2 items-center text-white opacity-80 hover:opacity-100 transition-all"

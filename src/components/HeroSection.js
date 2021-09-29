@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import ReactFlagsSelect from "react-flags-select";
 import { FaFacebook } from "react-icons/fa";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const HeroSection = () => {
   const [selected, setSelected] = useState("AZ");
+  const windowWidth = useWindowWidth();
 
   const phones = {
     US: "+1",
@@ -20,36 +22,50 @@ const HeroSection = () => {
     infinite: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 2500,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
 
   return (
-    <div className="relative h-[500px] before:bg-gradient-to-r before:from-primary-brand-color before:to-transparent before:inset-0 before:h-full before:w-full before:z-10 before:absolute">
-      <Slider {...settings}>
-        <div className="">
-          <img
-            className="w-full h-[500px] object-cover"
-            src="https://getir.com/_next/static/images/getir-mainpage-3-ffd1e98c5da51809f9adcc3a4a37d751.jpg"
-          />
-        </div>
-        <div className="">
-          <img
-            className="w-full h-[500px] object-cover"
-            src="https://getir.com/_next/static/images/getir-mainpage-4-1751ad2d8fb42a88742d6751938da7e7.jpg"
-          />
-        </div>
-      </Slider>
-      <div className="container flex items-center justify-between absolute top-0 left-1/2 -translate-x-1/2 h-full z-20">
-        <div>
+    <div className="relative h-auto md:h-[500px] before:bg-gradient-to-r before:from-primary-brand-color before:to-transparent before:inset-0 before:h-full before:w-full before:z-10 before:absolute">
+      {windowWidth >= 768 && (
+        <Slider {...settings}>
+          <div className="">
+            <img
+              className="w-full h-[500px] object-cover"
+              src="https://getir.com/_next/static/images/getir-mainpage-3-ffd1e98c5da51809f9adcc3a4a37d751.jpg"
+            />
+          </div>
+          <div className="">
+            <img
+              className="w-full h-[500px] object-cover"
+              src="https://getir.com/_next/static/images/getir-mainpage-4-1751ad2d8fb42a88742d6751938da7e7.jpg"
+            />
+          </div>
+          <div className="">
+            <img
+              className="w-full h-[500px] object-cover"
+              src="https://getir.com/_next/static/images/getir-mainpage-1-757eca6a46304def60cabce74d3f20a2.jpg"
+            />
+          </div>
+          <div className="">
+            <img
+              className="w-full h-[500px] object-cover"
+              src="https://getir.com/_next/static/images/getir-mainpage-2-7c23764275cdaf14d7b6cf15ebbdd0c1.jpg"
+            />
+          </div>
+        </Slider>
+      )}
+      <div className="md:container flex items-center justify-between relative md:absolute top-0 left-0 md:left-1/2 translate-x-0 md:-translate-x-1/2 h-full z-20">
+        <div className="hidden md:block">
           <img src="https://getir.com/_next/static/images/groceriesInMinutes-20f12c15098e8fd2bae874e2a40e343b.svg" />
           <h3 className="text-white font-semibold mt-8 text-4xl">
             At your door in <br /> minutes
           </h3>
         </div>
-        <div className="w-[400px] rounded-lg bg-gray-50 p-6">
+        <div className="w-full md:w-[400px] md:rounded-lg bg-gray-50 p-6">
           <h3 className="text-primary-brand-color font-semibold text-center ">
             Login or register
           </h3>
