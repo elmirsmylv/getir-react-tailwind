@@ -5,7 +5,7 @@
 
 ### Here is the live demo
 
-[Getir](getir-react-tailwind.vercel.app)
+[Getir](https://getir-react-tailwind.vercel.app/)
 
 ## 🔧 Tools
 
